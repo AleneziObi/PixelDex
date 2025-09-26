@@ -1,0 +1,47 @@
+[
+  {
+    "id": "rpg",
+    "name": "Role-Playing Game",
+    "emoji": "🛡️",
+    "description": "Narrative-driven games where players level up characters and make choices.",
+    "examples": ["Final Fantasy VII", "The Witcher 3"],
+    "popularity": { "1980s": 15, "1990s": 40, "2000s": 65, "2010s": 85, "2020s": 90 },
+    "subgenres": ["JRPG", "WRPG", "Tactical RPG"]
+  },
+  {
+    "id": "platformer",
+    "name": "Platformer",
+    "emoji": "🏃",
+    "description": "Jumping and spatial challenge games, often level-based.",
+    "examples": ["Super Mario Bros", "Celeste"],
+    "popularity": { "1980s": 80, "1990s": 70, "2000s": 40, "2010s": 30, "2020s": 25 },
+    "subgenres": ["2D Platformer", "3D Platformer", "Puzzle Platformer"]
+  },
+  {
+    "id": "shooter",
+    "name": "Shooter",
+    "emoji": "🔫",
+    "description": "Action-focused games where ranged combat is central.",
+    "examples": ["Doom", "Call of Duty"],
+    "popularity": { "1980s": 10, "1990s": 45, "2000s": 90, "2010s": 95, "2020s": 85 },
+    "subgenres": ["FPS", "TPS", "Hero Shooter"]
+  },
+  {
+    "id": "strategy",
+    "name": "Strategy",
+    "emoji": "♟️",
+    "description": "Games emphasizing planning, resource management, and tactics.",
+    "examples": ["Civilization VI", "StarCraft"],
+    "popularity": { "1980s": 20, "1990s": 50, "2000s": 55, "2010s": 60, "2020s": 50 },
+    "subgenres": ["RTS", "TBS", "4X"]
+  },
+  {
+    "id": "roguelike",
+    "name": "Roguelike / Roguelite",
+    "emoji": "🎲",
+    "description": "Procedural levels, permadeath (or lighter variants), high replayability.",
+    "examples": ["Spelunky", "Dead Cells"],
+    "popularity": { "1980s": 5, "1990s": 10, "2000s": 20, "2010s": 60, "2020s": 75 },
+    "subgenres": ["Traditional Roguelike", "Roguelite"]
+  }
+]
