@@ -1,3 +1,43 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Global styles */
+body {
+  @apply bg-gray-50 text-gray-900 font-sans;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Smooth transitions for UI elements */
+button, a, input, select {
+  @apply transition-colors duration-200 ease-in-out;
+}
+
+/* Card hover effect */
+.card-hover {
+  @apply hover:shadow-lg hover:scale-[1.02] transition-transform;
+}
+
+/* Scrollbar styling (WebKit browsers) */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: #a5b4fc; /* indigo-300 */
+  border-radius: 4px;
+}
+::-webkit-scrollbar-track {
+  background: #f3f4f6; /* gray-100 */
+}
+
+/* Modal backdrop blur */
+.backdrop-blur {
+  backdrop-filter: blur(6px);
+}
+
+/* smoother transform rendering for motion */
+motion-div, .motion-div {
+  transform-origin: center;
+}

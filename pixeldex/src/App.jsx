@@ -1,10 +1,16 @@
 import React, { useState, useMemo, useRef } from 'react'
+import { AnimatePresence, delay, motion } from 'framer-motion'
 import genres from './data/genres.json'
 import SearchBar from './components/SearchBar'
 import GenreCard from './components/GenreCard'
 import GenreDetail from './components/GenreDetail'
 import CompareView from './components/CompareView'
 import html2canvas from 'html2canvas'
+
+const listContainer = {
+    hiddem: {},
+    show: {transotion: { staggerChildren: 0.06, delayChildren: 0.05 }}
+}
 
 export default function App() {
   const [query, setQuery] = useState('')
@@ -58,21 +64,30 @@ export default function App() {
 
       <main className="grid grid-cols-1 md:grid-cols-3 gap-4">
         <section className="md:col-span-2">
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {list.map(g => (
-              <GenreCard
-                key={g.id}
-                genre={g}
-                onSelect={setSelectedGenre}
-                onCompareToggle={toggleCompare}
-                comparing={!!compare.find(p => p.id === g.id)}
-              />
-            ))}
-          </div>
+            <motion.div
+                variants={listContainer}
+                initial="hidden"
+                animate="show"
+                layout
+            >
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    {list.map(g => (
+                        <motion.div key={g.id} layout>
+                            <GenreCard
+                                key={g.id}
+                                genre={g}
+                                onSelect={setSelectedGenre}
+                                onCompareToggle={toggleCompare}
+                                comparing={!!compare.find(p => p.id === g.id)}
+                            />
+                    </motion.div>
+                    ))}
+                </div>
+            </motion.div>
         </section>
 
         <aside>
-          <div className="sticky top-6" ref={exportRef}>
+          <motion.div className="sticky top-6" ref={exportRef} layout>
             <div className="bg-white rounded-lg shadow p-4">
               <div className="font-semibold">Selected for compare</div>
               <div className="mt-3 space-y-2">
@@ -86,18 +101,31 @@ export default function App() {
               </div>
 
               <div className="mt-4 flex gap-2">
-                <button onClick={() => { if (compare.length > 0) handleExport() }} className="flex-1 px-3 py-2 rounded bg-indigo-600 text-white text-sm">Export Snapshot</button>
+                <button
+                  onClick={() => { if (compare.length > 0) handleExport() }}
+                  className="flex-1 px-3 py-2 rounded bg-indigo-600 text-white text-sm"
+                >
+                  Export Snapshot
+                </button>
                 <button onClick={() => setCompare([])} className="px-3 py-2 rounded border">Clear</button>
               </div>
-
             </div>
 
+            {/* compare chart / panel */}
             <CompareView selected={compare} onClear={() => setCompare([])} onExport={handleExport} />
-          </div>
+          </motion.div>
         </aside>
       </main>
 
-      <GenreDetail genre={selectedGenre} onClose={() => setSelectedGenre(null)} onAddCompare={(g) => { toggleCompare(g); setSelectedGenre(null) }} />
+      <AnimatePresence>
+        {selectedGenre && (
+            <GenreDetail
+                genre={selectedGenre}
+                onClose={() => setSelectedGenre(null)}
+                onAddCompare={(g) => { toggleCompare(g); setSelectedGenre(null) }}
+            />
+        )}
+      </AnimatePresence>
 
       <footer className="mt-10 text-center text-sm text-gray-500">Made with ❤ — PixelDex starter</footer>
     </div>
