@@ -63,7 +63,7 @@ export default function App() {
               <GenreCard
                 key={g.id}
                 genre={g}
-                onOpen={(genre) => setSelectedGenre(genre)}
+                onSelect={(genre) => setSelectedGenre(genre)}
                 onCompareToggle={toggleCompare}
                 comparing={!!compare.find((c) => c.id === g.id)}
               />
