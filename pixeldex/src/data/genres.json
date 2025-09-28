@@ -55,6 +55,7 @@
     "emoji": "🏎️",
     "description": "Players compete in speed-based competitions using cars, bikes, or other vehicles.",
     "examples": ["Mario Kart", "Forza Horizon", "Gran Turismo"],
+    "covers": ["./covers/racing/smk.jpg", "./covers/racing/fh5.jpg", "./covers/racing/gt7.jpg"],
     "subgenres": ["Arcade Racing", "Simulation Racing", "Kart Racing"],
     "popularity": {"1980s": 15, "1990s": 35, "2000s": 60, "2010s": 75, "2020s": 70}
   },
@@ -64,6 +65,7 @@
     "emoji": "🧩",
     "description": "Players solve logic, pattern, or physics-based challenges.",
     "examples": ["Tetris", "Portal", "Candy Crush"],
+    "covers": ["./covers/puzzle/tetris.jpg", "./covers/puzzle/portal2.jpg", "./covers/puzzle/candyc.jpg"],
     "subgenres": ["Logic", "Physics", "Match-3", "Hidden Object"],
     "popularity": {"1980s": 25, "1990s": 40, "2000s": 50, "2010s": 65, "2020s": 60}
   },
@@ -73,6 +75,7 @@
     "emoji": "🛠️",
     "description": "Players simulate real-life or fictional activities like building, managing, or surviving.",
     "examples": ["The Sims", "Flight Simulator", "Cities: Skylines"],
+    "covers": ["./covers/sim/sims4.jpg", "./covers/sim/flightSim.jpg", "./covers/sim/citys.jpg"],
     "subgenres": ["Life Simulation", "Management", "Vehicle Simulation"],
     "popularity": {"1980s": 10, "1990s": 30, "2000s": 55, "2010s": 70, "2020s": 65}
   },
@@ -82,6 +85,7 @@
     "emoji": "👻",
     "description": "Games designed to scare players using tension, atmosphere, or jump scares.",
     "examples": ["Resident Evil", "Silent Hill", "Amnesia"],
+    "covers": ["./covers/horror/re8.jpg", "./covers/horror/sh2.jpg", "./covers/horror/alien.jpg"],
     "subgenres": ["Survival Horror", "Psychological Horror", "Action Horror"],
     "popularity": {"1980s": 5, "1990s": 20, "2000s": 50, "2010s": 70, "2020s": 60}
   },
@@ -91,6 +95,7 @@
     "emoji": "🏝️",
     "description": "Players freely explore and create in open-world environments without linear objectives.",
     "examples": ["Minecraft", "GTA V", "Terraria"],
+    "covers": ["./covers/sandbox/minecraft.jpg", "./covers/sandbox/terra.jpg", "./covers/sandbox/gtav.jpg"],
     "subgenres": ["Open World", "Creative Sandbox", "Survival Sandbox"],
     "popularity": {"1980s": 0, "1990s": 5, "2000s": 40, "2010s": 80, "2020s": 85}
   },
@@ -100,6 +105,7 @@
   "emoji": "🥊",
   "description": "Players engage in close combat with one or more characters, often using combos and special moves.",
   "examples": ["Street Fighter", "Tekken", "Mortal Kombat"],
+  "covers": ["./covers/fighting/sf6.jpg", "./covers/fighting/tekken.jpg", "./covers/fighting/smash.jpg"],
   "subgenres": ["2D Fighting", "3D Fighting", "Arena Fighting", "Platform Fighter"],
   "popularity": {"1980s": 5, "1990s": 45, "2000s": 60, "2010s": 55, "2020s": 50}
   },
@@ -109,7 +115,7 @@
     "emoji": "🕶️",
     "description": "Emphasizes avoiding detection with tools like disguises, gadgets, and silent takedowns.",
     "examples": ["Metal Gear Solid V", "Dishonored 2", "Splinter Cell: Chaos Theory"],
-    "covers": ["./covers/stealth/mgsv.jpg", "./covers/stealth/dishonored2.jpg", "./covers/stealth/scct.jpg"],
+    "covers": ["./covers/stealth/mgsv.jpg", "./covers/stealth/dishonor.jpg", "./covers/stealth/splinter.jpg"],
     "subgenres": ["Immersive Sim", "Action Stealth", "Tactical Stealth"],
     "popularity": { "1980s": 5, "1990s": 20, "2000s": 50, "2010s": 65, "2020s": 55 }
   },
@@ -119,7 +125,7 @@
     "emoji": "🧭",
     "description": "Exploration-heavy platformers with ability gating, backtracking, and interconnected maps.",
     "examples": ["Hollow Knight", "Ori and the Blind Forest", "Castlevania: Symphony of the Night"],
-    "covers": ["./covers/metroidvania/hollowknight.jpg", "./covers/metroidvania/ori.jpg", "./covers/metroidvania/sotn.jpg"],
+    "covers": ["./covers/metvania/Smetroid.jpg", "./covers/metvania/sotn.jpg", "./covers/metvania/hollow.jpg"],
     "subgenres": ["Exploration Platformer", "Soulslike-MV"],
     "popularity": { "1980s": 10, "1990s": 25, "2000s": 35, "2010s": 70, "2020s": 80 }
   },
@@ -129,7 +135,7 @@
     "emoji": "🌐",
     "description": "Massively multiplayer worlds focused on progression, social play, and large-scale activities.",
     "examples": ["World of Warcraft", "Final Fantasy XIV", "Guild Wars 2"],
-    "covers": ["./covers/mmo/wow.jpg", "./covers/mmo/ffxiv.jpg", "./covers/mmo/gw2.jpg"],
+    "covers": ["./covers/MMO/wow.jpg", "./covers/MMO/ff14.jpg", "./covers/MMO/guildwar2.jpg"],
     "subgenres": ["Theme Park", "Sandbox MMO", "Action MMO"],
     "popularity": { "1980s": 0, "1990s": 10, "2000s": 85, "2010s": 80, "2020s": 70 }
   },
@@ -139,7 +145,7 @@
     "emoji": "🥁",
     "description": "Gameplay synced to music—timing inputs to beats, notes, and patterns.",
     "examples": ["Beat Saber", "Guitar Hero III", "Taiko no Tatsujin"],
-    "covers": ["./covers/rhythm/beatsaber.jpg", "./covers/rhythm/gh3.jpg", "./covers/rhythm/taiko.jpg"],
+    "covers": ["./covers/rhythm/beatSaber.jpg", "./covers/rhythm/guitarHero.jpg", "./covers/rhythm/taiko.jpg"],
     "subgenres": ["VR Rhythm", "Action Rhythm", "Music Puzzle"],
     "popularity": { "1980s": 5, "1990s": 15, "2000s": 60, "2010s": 55, "2020s": 65 }
   },
@@ -149,7 +155,7 @@
     "emoji": "⚽",
     "description": "Recreates competitive sports with modes from casual to simulation.",
     "examples": ["EA Sports FC (FIFA)", "NBA 2K", "Rocket League"],
-    "covers": ["./covers/sports/fc24.jpg", "./covers/sports/nba2k.jpg", "./covers/sports/rocketleague.jpg"],
+    "covers": ["./covers/sports/fc26.jpg", "./covers/sports/2k26.jpg", "./covers/sports/rocket.jpg"],
     "subgenres": ["Football/Soccer", "Basketball", "Arcade Sports"],
     "popularity": { "1980s": 20, "1990s": 45, "2000s": 70, "2010s": 75, "2020s": 80 }
   }
