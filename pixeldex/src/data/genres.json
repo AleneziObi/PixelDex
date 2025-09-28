@@ -5,7 +5,7 @@
     "emoji": "🛡️",
     "description": "Narrative-driven games where players level up characters and make choices.",
     "examples": ["Final Fantasy VII", "The Witcher 3", "Persona 5 Royal"],
-    "covers": ["./covers/ff7.jpg", "./covers/witcher3.jpg", "./covers/p5r.jpg"],
+    "covers": ["./covers/rpg/ff7.jpg", "./covers/rpg/witcher3.jpg", "./covers/rpg/p5r.jpg"],
     "popularity": { "1980s": 15, "1990s": 40, "2000s": 65, "2010s": 85, "2020s": 90 },
     "subgenres": ["JRPG", "WRPG", "Tactical RPG"]
   },
@@ -15,7 +15,7 @@
     "emoji": "🏃",
     "description": "Jumping and spatial challenge games, often level-based.",
     "examples": ["Super Mario Bros", "Celeste"],
-    "covers": ["./covers/sm64.jpg", "./covers/sonic.jpg" ,"./covers/celest.jpg"],
+    "covers": ["./covers/platformer/sm64.jpg", "./covers/platformer/sonic.jpg" ,"./covers/platformer/celest.jpg"],
     "popularity": { "1980s": 80, "1990s": 70, "2000s": 40, "2010s": 30, "2020s": 25 },
     "subgenres": ["2D Platformer", "3D Platformer", "Puzzle Platformer"]
   },
@@ -25,6 +25,7 @@
     "emoji": "🔫",
     "description": "Action-focused games where ranged combat is central.",
     "examples": ["Doom", "Call of Duty"],
+    "covers": ["./covers/cod.jpg", "./covers/doom.jpg","./covers/overwatch2.jpg"],
     "popularity": { "1980s": 10, "1990s": 45, "2000s": 90, "2010s": 95, "2020s": 85 },
     "subgenres": ["FPS", "TPS", "Hero Shooter"]
   },
@@ -34,6 +35,7 @@
     "emoji": "♟️",
     "description": "Games emphasizing planning, resource management, and tactics.",
     "examples": ["Civilization VI", "StarCraft"],
+    "covers": ["./covers/starcraft.jpg", "./covers/civ7.jpg","./covers/fe3h.jpg"],
     "popularity": { "1980s": 20, "1990s": 50, "2000s": 55, "2010s": 60, "2020s": 50 },
     "subgenres": ["RTS", "TBS", "4X"]
   },
@@ -43,6 +45,7 @@
     "emoji": "🎲",
     "description": "Procedural levels, permadeath (or lighter variants), high replayability.",
     "examples": ["Spelunky", "Dead Cells"],
+    "covers": ["./covers/splunk.jpg", "./covers/hades.jpg","./covers/slayS.jpg"],
     "popularity": { "1980s": 5, "1990s": 10, "2000s": 20, "2010s": 60, "2020s": 75 },
     "subgenres": ["Traditional Roguelike", "Roguelite"]
   },
@@ -99,5 +102,55 @@
   "examples": ["Street Fighter", "Tekken", "Mortal Kombat"],
   "subgenres": ["2D Fighting", "3D Fighting", "Arena Fighting", "Platform Fighter"],
   "popularity": {"1980s": 5, "1990s": 45, "2000s": 60, "2010s": 55, "2020s": 50}
+  },
+  {
+    "id": "stealth",
+    "name": "Stealth",
+    "emoji": "🕶️",
+    "description": "Emphasizes avoiding detection with tools like disguises, gadgets, and silent takedowns.",
+    "examples": ["Metal Gear Solid V", "Dishonored 2", "Splinter Cell: Chaos Theory"],
+    "covers": ["./covers/stealth/mgsv.jpg", "./covers/stealth/dishonored2.jpg", "./covers/stealth/scct.jpg"],
+    "subgenres": ["Immersive Sim", "Action Stealth", "Tactical Stealth"],
+    "popularity": { "1980s": 5, "1990s": 20, "2000s": 50, "2010s": 65, "2020s": 55 }
+  },
+  {
+    "id": "metroidvania",
+    "name": "Metroidvania",
+    "emoji": "🧭",
+    "description": "Exploration-heavy platformers with ability gating, backtracking, and interconnected maps.",
+    "examples": ["Hollow Knight", "Ori and the Blind Forest", "Castlevania: Symphony of the Night"],
+    "covers": ["./covers/metroidvania/hollowknight.jpg", "./covers/metroidvania/ori.jpg", "./covers/metroidvania/sotn.jpg"],
+    "subgenres": ["Exploration Platformer", "Soulslike-MV"],
+    "popularity": { "1980s": 10, "1990s": 25, "2000s": 35, "2010s": 70, "2020s": 80 }
+  },
+  {
+    "id": "mmo",
+    "name": "MMO / MMORPG",
+    "emoji": "🌐",
+    "description": "Massively multiplayer worlds focused on progression, social play, and large-scale activities.",
+    "examples": ["World of Warcraft", "Final Fantasy XIV", "Guild Wars 2"],
+    "covers": ["./covers/mmo/wow.jpg", "./covers/mmo/ffxiv.jpg", "./covers/mmo/gw2.jpg"],
+    "subgenres": ["Theme Park", "Sandbox MMO", "Action MMO"],
+    "popularity": { "1980s": 0, "1990s": 10, "2000s": 85, "2010s": 80, "2020s": 70 }
+  },
+  {
+    "id": "rhythm",
+    "name": "Rhythm",
+    "emoji": "🥁",
+    "description": "Gameplay synced to music—timing inputs to beats, notes, and patterns.",
+    "examples": ["Beat Saber", "Guitar Hero III", "Taiko no Tatsujin"],
+    "covers": ["./covers/rhythm/beatsaber.jpg", "./covers/rhythm/gh3.jpg", "./covers/rhythm/taiko.jpg"],
+    "subgenres": ["VR Rhythm", "Action Rhythm", "Music Puzzle"],
+    "popularity": { "1980s": 5, "1990s": 15, "2000s": 60, "2010s": 55, "2020s": 65 }
+  },
+  {
+    "id": "sports",
+    "name": "Sports",
+    "emoji": "⚽",
+    "description": "Recreates competitive sports with modes from casual to simulation.",
+    "examples": ["EA Sports FC (FIFA)", "NBA 2K", "Rocket League"],
+    "covers": ["./covers/sports/fc24.jpg", "./covers/sports/nba2k.jpg", "./covers/sports/rocketleague.jpg"],
+    "subgenres": ["Football/Soccer", "Basketball", "Arcade Sports"],
+    "popularity": { "1980s": 20, "1990s": 45, "2000s": 70, "2010s": 75, "2020s": 80 }
   }
-]
+  ]
