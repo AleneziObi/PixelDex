@@ -6,7 +6,8 @@
     "description": "Narrative-driven games where players level up characters and make choices.",
     "examples": ["Final Fantasy VII", "The Witcher 3"],
     "popularity": { "1980s": 15, "1990s": 40, "2000s": 65, "2010s": 85, "2020s": 90 },
-    "subgenres": ["JRPG", "WRPG", "Tactical RPG"]
+    "subgenres": ["JRPG", "WRPG", "Tactical RPG"],
+    "icon": "/src/assets/icons/icons8-sword-50.png"
   },
   {
     "id": "platformer",
@@ -43,5 +44,59 @@
     "examples": ["Spelunky", "Dead Cells"],
     "popularity": { "1980s": 5, "1990s": 10, "2000s": 20, "2010s": 60, "2020s": 75 },
     "subgenres": ["Traditional Roguelike", "Roguelite"]
+  },
+  {
+    "id": "racing",
+    "name": "Racing",
+    "emoji": "🏎️",
+    "description": "Players compete in speed-based competitions using cars, bikes, or other vehicles.",
+    "examples": ["Mario Kart", "Forza Horizon", "Gran Turismo"],
+    "subgenres": ["Arcade Racing", "Simulation Racing", "Kart Racing"],
+    "popularity": {"1980s": 15, "1990s": 35, "2000s": 60, "2010s": 75, "2020s": 70}
+  },
+  {
+    "id": "puzzle",
+    "name": "Puzzle",
+    "emoji": "🧩",
+    "description": "Players solve logic, pattern, or physics-based challenges.",
+    "examples": ["Tetris", "Portal", "Candy Crush"],
+    "subgenres": ["Logic", "Physics", "Match-3", "Hidden Object"],
+    "popularity": {"1980s": 25, "1990s": 40, "2000s": 50, "2010s": 65, "2020s": 60}
+  },
+  {
+    "id": "simulation",
+    "name": "Simulation",
+    "emoji": "🛠️",
+    "description": "Players simulate real-life or fictional activities like building, managing, or surviving.",
+    "examples": ["The Sims", "Flight Simulator", "Cities: Skylines"],
+    "subgenres": ["Life Simulation", "Management", "Vehicle Simulation"],
+    "popularity": {"1980s": 10, "1990s": 30, "2000s": 55, "2010s": 70, "2020s": 65}
+  },
+  {
+    "id": "horror",
+    "name": "Horror",
+    "emoji": "👻",
+    "description": "Games designed to scare players using tension, atmosphere, or jump scares.",
+    "examples": ["Resident Evil", "Silent Hill", "Amnesia"],
+    "subgenres": ["Survival Horror", "Psychological Horror", "Action Horror"],
+    "popularity": {"1980s": 5, "1990s": 20, "2000s": 50, "2010s": 70, "2020s": 60}
+  },
+  {
+    "id": "sandbox",
+    "name": "Sandbox",
+    "emoji": "🏝️",
+    "description": "Players freely explore and create in open-world environments without linear objectives.",
+    "examples": ["Minecraft", "GTA V", "Terraria"],
+    "subgenres": ["Open World", "Creative Sandbox", "Survival Sandbox"],
+    "popularity": {"1980s": 0, "1990s": 5, "2000s": 40, "2010s": 80, "2020s": 85}
+  },
+  {
+  "id": "fighting",
+  "name": "Fighting",
+  "emoji": "🥊",
+  "description": "Players engage in close combat with one or more characters, often using combos and special moves.",
+  "examples": ["Street Fighter", "Tekken", "Mortal Kombat"],
+  "subgenres": ["2D Fighting", "3D Fighting", "Arena Fighting", "Platform Fighter"],
+  "popularity": {"1980s": 5, "1990s": 45, "2000s": 60, "2010s": 55, "2020s": 50}
   }
 ]

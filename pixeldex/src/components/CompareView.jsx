@@ -1,44 +1,36 @@
 import React from 'react'
-import { ResponsiveContainer, BarChart, Bar, XAxis, YAxis, Tooltip, Legend, CartesianGrid } from 'recharts'
-
-function subgenreScore(genre, sub) {
-    const base = Object.values(genre.popularity).reduce((a, b) => a + b, 0) / 5
-  return Math.round(base / (sub.length + 1))
-}
 
 export default function CompareView({ selected, onClear, onExport }) {
+
   if (selected.length === 0) return null
-  const left = selected[0]
-  const right = selected[1]
-
-  // build a list of combined subgenres
-  const subs = Array.from(new Set([...(left?.subgenres || []), ...(right?.subgenres || [])]))
-  const data = subs.map(s => ({ sub: s, [left?.id || 'left']: subgenreScore(left || { popularity: {} }, s), [right?.id || 'right']: subgenreScore(right || { popularity: {} }, s) }))
-
   return (
-    <div className="bg-white rounded-lg shadow p-4 mt-4">
-      <div className="flex items-center justify-between">
-        <div className="font-semibold">Comparison</div>
-        <div className="flex gap-2">
-          <button onClick={onExport} className="px-3 py-1 rounded bg-indigo-600 text-white text-sm">Export</button>
-          <button onClick={onClear} className="px-3 py-1 rounded border">Clear</button>
+    <aside className="compare">
+      <div className="compare__title">Comparison</div>
+
+      {selected.length === 0 ? (
+        <div className="text-muted">No genres selected. Click "Compare" on cards.</div>
+      ) : (
+        <div className="compare__list">
+          {selected.map((g) => (
+            <div key={g.id} className="compare__item">
+              <div className="compare__left">
+                <div className="emoji small">{g.emoji}</div>
+                <div>
+                  <div className="compare__name">{g.name}</div>
+                  <div className="compare__subs">{g.subgenres.join(", ")}</div>
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
-      </div>
+      )}
 
-      <div className="mt-4 h-56">
-        <ResponsiveContainer width="100%" height="100%">
-          <BarChart data={data} margin={{ top: 5, right: 20, left: 0, bottom: 5 }}>
-            <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="sub" />
-            <YAxis />
-            <Tooltip />
-            <Legend />
-            <Bar dataKey={left?.id} name={left?.name} />
-            <Bar dataKey={right?.id} name={right?.name} />
-          </BarChart>
-        </ResponsiveContainer>
+      <div className="compare__actions">
+        <button className="btn btn--primary" onClick={() => { if (onCopy) onCopy(); else navigator.clipboard && navigator.clipboard.writeText(selected.map(s => s.name).join(", ")); }}>
+          Copy Names
+        </button>
+        <button className="btn btn--ghost" onClick={onClear}>Clear</button>
       </div>
-
-    </div>
+    </aside>
   )
 }

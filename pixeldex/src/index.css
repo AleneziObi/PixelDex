@@ -2,42 +2,85 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Global styles */
+/* ---------------- Global Styles ---------------- */
 body {
-  @apply bg-gray-50 text-gray-900 font-sans;
+  @apply bg-black text-white font-sans;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Smooth transitions for UI elements */
+/* Smooth transitions for interactive elements */
 button, a, input, select {
   @apply transition-colors duration-200 ease-in-out;
 }
 
-/* Card hover effect */
+/* Card hover effect for extra lift */
 .card-hover {
-  @apply hover:shadow-lg hover:scale-[1.02] transition-transform;
+  @apply hover:shadow-x1 hover:scale-105 transition-transform duration-200;
 }
 
-/* Scrollbar styling (WebKit browsers) */
+/* Scrollbar styling (WebKit) */
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
 }
 ::-webkit-scrollbar-thumb {
-  background: #a5b4fc; /* indigo-300 */
+  /* background: #6b21a8; purple-700 */
+  background: #237264ff; /* purple-600 */
   border-radius: 4px;
 }
 ::-webkit-scrollbar-track {
-  background: #f3f4f6; /* gray-100 */
+  background: #1f1f1f; /* dark gray */
 }
 
 /* Modal backdrop blur */
 .backdrop-blur {
-  backdrop-filter: blur(6px);
+  backdrop-filter: blur(8px);
 }
 
-/* smoother transform rendering for motion */
-motion-div, .motion-div {
-  transform-origin: center;
+/* Gradient text utility */
+.text-gradient-purple {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-purple-700;
+}
+
+/* Gradient buttons */
+.btn-gradient-purple {
+  @apply bg-gradient-to-r from-purple-600 to-purple-800 hover:from-purple-700 hover:to-purple-900 text-white font-semibold rounded-lg px-3 py-2;
+}
+
+/* Secondary buttons */
+.btn-secondary-dark {
+  @apply border border-gray-700 text-gray-300 hover:bg-gray-800 rounded-lg px-3 py-2 font-medium;
+}
+
+/* Card container */
+.card-dark {
+  @apply bg-gray-900 border border-gray-800 rounded-xl shadow-lg p-5 flex flex-col gap-3 cursor-pointer;
+}
+
+/* Emoji circle in cards */
+.emoji-circle-purple {
+  @apply bg-purple-700 text-white rounded-full w-12 h-12 flex items-center justify-center text-xl;
+}
+
+/* Compare panel */
+.compare-panel-dark {
+  @apply bg-gray-900 rounded-xl shadow-lg p-4 mt-6;
+}
+
+/* Small fade-in animation for header or sections */
+.fade-in {
+  @apply opacity-0;
+  animation: fadeIn 0.5s forwards;
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+/* Responsive tweaks */
+@media (min-width: 640px) {
+  .grid-sm-2 {
+    @apply grid-cols-2;
+  }
 }
