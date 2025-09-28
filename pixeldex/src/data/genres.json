@@ -4,10 +4,10 @@
     "name": "Role-Playing Game",
     "emoji": "🛡️",
     "description": "Narrative-driven games where players level up characters and make choices.",
-    "examples": ["Final Fantasy VII", "The Witcher 3"],
+    "examples": ["Final Fantasy VII", "The Witcher 3", "Persona 5 Royal"],
+    "covers": ["./covers/ff7.jpg", "./covers/witcher3.jpg", "./covers/p5r.jpg"],
     "popularity": { "1980s": 15, "1990s": 40, "2000s": 65, "2010s": 85, "2020s": 90 },
-    "subgenres": ["JRPG", "WRPG", "Tactical RPG"],
-    "icon": "/src/assets/icons/icons8-sword-50.png"
+    "subgenres": ["JRPG", "WRPG", "Tactical RPG"]
   },
   {
     "id": "platformer",
@@ -15,6 +15,7 @@
     "emoji": "🏃",
     "description": "Jumping and spatial challenge games, often level-based.",
     "examples": ["Super Mario Bros", "Celeste"],
+    "covers": ["./covers/sm64.jpg", "./covers/sonic.jpg" ,"./covers/celest.jpg"],
     "popularity": { "1980s": 80, "1990s": 70, "2000s": 40, "2010s": 30, "2020s": 25 },
     "subgenres": ["2D Platformer", "3D Platformer", "Puzzle Platformer"]
   },

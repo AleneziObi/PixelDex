@@ -1,6 +1,8 @@
 import React from 'react'
 
 export default function GenreCard({ genre, onSelect, onCompareToggle, comparing }) {
+  const covers = Array.isArray(genre.covers) ? genre.covers.slice(0,3) : []
+
   return (
     <article className={`card ${comparing ? "card--selected" : ""}`}>
 
@@ -11,10 +13,25 @@ export default function GenreCard({ genre, onSelect, onCompareToggle, comparing 
           <p className="card__desc">{genre.description}</p>
         </div>
       </div>
+
+      <div className="covers">
+        {covers.length > 0 ? (
+          covers.map((src, i) => (
+            <img
+              key={i}
+              src={src}
+              alt={`${genre.name} cover ${i + 1}`}
+              className="cover"
+              loading="lazy"
+            />
+          ))
+        ) : (
+          <div className="covers__empty">No covers yet</div>
+        )}
+      </div>
       
       <div className="card__footer">
-        <div className="examples">Examples: {genre.examples.join(", ")}</div>
-        <div className="card__actions">
+        <div className="card__actions" style={{marginLeft: 'auto'}}>
           <button className="btn btn--primary" onClick={() => onSelect?.(genre)}>Open</button>
           <button className={`btn btn--ghost ${comparing ? "btn--accent" : ""}`} onClick={() => onCompareToggle(genre)}>
             {comparing ? "Remove" : "Compare"}
