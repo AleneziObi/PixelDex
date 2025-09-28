@@ -1,13 +1,18 @@
 import React from 'react'
 
-export default function CompareView({ selected, onClear, onExport }) {
+export default function CompareView({
+  selected = [],
+  onClear,
+  onCopy,
+  onExport,
+}) {
+  const empty = !selected || selected.length === 0
 
-  if (selected.length === 0) return null
   return (
     <aside className="compare">
       <div className="compare__title">Comparison</div>
 
-      {selected.length === 0 ? (
+      {empty ? (
         <div className="text-muted">No genres selected. Click "Compare" on cards.</div>
       ) : (
         <div className="compare__list">
@@ -17,7 +22,7 @@ export default function CompareView({ selected, onClear, onExport }) {
                 <div className="emoji small">{g.emoji}</div>
                 <div>
                   <div className="compare__name">{g.name}</div>
-                  <div className="compare__subs">{g.subgenres.join(", ")}</div>
+                  <div className="compare__subs">{(g.subgenres ?? []).join(", ")}</div>
                 </div>
               </div>
             </div>
@@ -26,10 +31,26 @@ export default function CompareView({ selected, onClear, onExport }) {
       )}
 
       <div className="compare__actions">
-        <button className="btn btn--primary" onClick={() => { if (onCopy) onCopy(); else navigator.clipboard && navigator.clipboard.writeText(selected.map(s => s.name).join(", ")); }}>
+        <button 
+          className="btn btn--primary" 
+          onClick={() => { 
+            if (onCopy) onCopy(); 
+            else if (navigator.clipboard) {
+              navigator.clipboard.writeText(selected.map(s => s.name).join(", "))
+            } 
+          }}
+          disabled={empty}
+          title={ empty ? "Select genres fisrt" : "Copy selected genre name"}
+        >
           Copy Names
         </button>
-        <button className="btn btn--ghost" onClick={onClear}>Clear</button>
+        { onExport && (
+          <button className="btn btn--primary" onClick={onExport} disabled={empty}>
+            Export
+          </button>
+            
+        )}
+        <button className="btn btn--ghost" onClick={onClear} disabled={empty}>Clear</button>
       </div>
     </aside>
   )

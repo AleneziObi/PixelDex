@@ -40,7 +40,6 @@ export default function App() {
   console.log('genres length =', Array.isArray(genres) ? genres.length : genres);
 
   return (
-    
     <div className="app-root">
       <header className="header">
         <div>
@@ -65,7 +64,7 @@ export default function App() {
                 key={g.id}
                 genre={g}
                 onOpen={(genre) => setSelectedGenre(genre)}
-                onToggleCompare={toggleCompare}
+                onCompareToggle={toggleCompare}
                 comparing={!!compare.find((c) => c.id === g.id)}
               />
             ))}
