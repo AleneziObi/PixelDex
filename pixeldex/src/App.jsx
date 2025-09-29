@@ -7,23 +7,44 @@ import genres from "./data/genres.json";
 
 export default function App() {
   const [query, setQuery] = useState("");
-  const [decade, setDecade] = useState("all");
+  const [sort, setSort] = useState("az"); // az | za | popAsc | popDesc
   const [selectedGenre, setSelectedGenre] = useState(null);
   const [compare, setCompare] = useState([]);
   const exportRef = useRef(null);
 
+  const popularityScore = (g) => {
+    Object.values(g.popularity || {}).reduce((sum, v) => sum + Number(v ||0), 0);
+  }
+
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
-    return genres.filter((g) => {
-      const matchesQ =
-        q === "" ||
-        g.name.toLowerCase().includes(q) ||
-        g.examples.join(" ").toLowerCase().includes(q) ||
-        (g.subgenres || []).join(" ").toLowerCase().includes(q);
-      const matchesDecade = decade === "all" || Object.keys(g.popularity).includes(decade);
-      return matchesQ && matchesDecade;
+
+    let arr = genres.filter((g) => {
+      const inName = g.name.toLowerCase().includes(q);
+      const inExamples = (g.examples || []).join(" ").toLowerCase().includes(q);
+      const inSubs = (g.subgenres || []).join(" ").toLowerCase().includes(q);
+      return q === "" || inName || inExamples || inSubs;
     });
-  }, [query, decade]);
+
+    switch (sort) {
+      case "az":
+        arr.sort((a, b) => a.name.localeCompare(b.name));
+        break;
+      case "za":
+        arr.sort((a, b) => b.name.localeCompare(a.name));
+        break;
+      case "popAsc":
+        arr.sort((a, b) => (popularityScore(a) || 0) - (popularityScore(b) || 0));
+        break;
+      case "popDesc":
+        arr.sort((a, b) => (popularityScore(b) || 0) - (popularityScore(a) || 0));
+        break;
+      default:
+        break;
+    }
+
+    return arr;
+  }, [query, sort]);
 
   function toggleCompare(g) {
     setCompare((prev) => {
@@ -36,8 +57,6 @@ export default function App() {
   function clearCompare() {
     setCompare([]);
   }
-
-  console.log('genres length =', Array.isArray(genres) ? genres.length : genres);
 
   return (
     <div className="app-root">
@@ -55,25 +74,43 @@ export default function App() {
       <main className="main">
         <div className="main-left">
           <div className="controls">
-            <SearchBar value={query} onChange={setQuery} decade={decade} onDecadeChange={setDecade} />
+            <SearchBar 
+              value={query}  
+              onChange={setQuery} 
+              sort={sort} 
+              onSortChange={setSort} />
           </div>
 
           <div className="grid">
-            {filtered.map((g) => (
-              <GenreCard
-                key={g.id}
-                genre={g}
-                onSelect={(genre) => setSelectedGenre(genre)}
-                onCompareToggle={toggleCompare}
-                comparing={!!compare.find((c) => c.id === g.id)}
-              />
-            ))}
+            {filtered.length === 0 ? (
+              <div style={{ opacity: .08, padding:'24px', border:'1px dashed rgba(255,255,255,.15)', borderRadius:'12'}}>
+                No matches. Try a different search or sort.
+              </div>
+            ) : (
+              filtered.map((g) => (
+                <GenreCard
+                  key={g.id}
+                  genre={g}
+                  onSelect={(genre) => setSelectedGenre(genre)}
+                  onCompareToggle={toggleCompare}
+                  comparing={!!compare.find((c) => c.id === g.id)}
+                />
+              ))
+            )}
           </div>
         </div>
 
         <div className="main-right">
           <div className="sticky" ref={exportRef}>
-            <CompareView selected={compare} onClear={clearCompare} onCopy={() => { navigator.clipboard && navigator.clipboard.writeText(compare.map(s => s.name).join(", ")); }} />
+            <CompareView 
+              selected={compare} 
+              onClear={clearCompare} 
+              onCopy={() => { 
+                if (navigator.clipboard) {
+                  navigator.clipboard.writeText(compare.map((s) => s.name).join(", "));
+                }
+              }}
+            />
           </div>
         </div>
       </main>

@@ -27,7 +27,7 @@
     "emoji": "🔫",
     "description": "Action-focused games where ranged combat is central.",
     "examples": ["Doom", "Call of Duty"],
-    "covers": ["./covers/cod.jpg", "./covers/doom.jpg","./covers/overwatch2.jpg"],
+    "covers": ["./covers/shooters/cod.jpg", "./covers/shooters/doom.jpg","./covers/shooters/overwatch2.jpg"],
     "popularity": { "1980s": 10, "1990s": 45, "2000s": 90, "2010s": 95, "2020s": 85 },
     "subgenres": ["FPS", "TPS", "Hero Shooter"]
   },
@@ -37,7 +37,7 @@
     "emoji": "♟️",
     "description": "Games emphasizing planning, resource management, and tactics.",
     "examples": ["Civilization VI", "StarCraft"],
-    "covers": ["./covers/starcraft.jpg", "./covers/civ7.jpg","./covers/fe3h.jpg"],
+    "covers": ["./covers/strategy/starcraft.jpg", "./covers/strategy/civ7.jpg","./covers/strategy/fe3h.jpg"],
     "popularity": { "1980s": 20, "1990s": 50, "2000s": 55, "2010s": 60, "2020s": 50 },
     "subgenres": ["RTS", "TBS", "4X"]
   },
@@ -47,7 +47,7 @@
     "emoji": "🎲",
     "description": "Procedural levels, permadeath (or lighter variants), high replayability.",
     "examples": ["Spelunky", "Dead Cells"],
-    "covers": ["./covers/splunk.jpg", "./covers/hades.jpg","./covers/slayS.jpg"],
+    "covers": ["./covers/rougelike/splunk.jpg", "./covers/rougelike/hades.jpg","./covers/rougelike/slayS.jpg"],
     "popularity": { "1980s": 5, "1990s": 10, "2000s": 20, "2010s": 60, "2020s": 75 },
     "subgenres": ["Traditional Roguelike", "Roguelite"]
   },
