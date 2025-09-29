@@ -5,7 +5,9 @@
     "emoji": "🛡️",
     "description": "Narrative-driven games where players level up characters and make choices.",
     "examples": ["Final Fantasy VII", "The Witcher 3", "Persona 5 Royal"],
-    "covers": ["./covers/rpg/ff7.jpg", "./covers/rpg/witcher3.jpg", "./covers/rpg/p5r.jpg"],
+    "covers": ["https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co2kx2.jpg", 
+    "./covers/rpg/witcher3.jpg", 
+    "./covers/rpg/p5r.jpg"],
     "popularity": { "1980s": 15, "1990s": 40, "2000s": 65, "2010s": 85, "2020s": 90 },
     "subgenres": ["JRPG", "WRPG", "Tactical RPG"]
   },
@@ -158,5 +160,57 @@
     "covers": ["./covers/sports/fc26.jpg", "./covers/sports/2k26.jpg", "./covers/sports/rocket.jpg"],
     "subgenres": ["Football/Soccer", "Basketball", "Arcade Sports"],
     "popularity": { "1980s": 20, "1990s": 45, "2000s": 70, "2010s": 75, "2020s": 80 }
-  }
-  ]
+  },
+    {
+    "id": "partygames",
+    "name": "Party Games",
+    "emoji": "🎉",
+    "description": "Pick-up-and-play minigames built for couch or online multiplayer—fast rounds, chaotic fun, and easy onboarding.",
+    "examples": ["Mario Party Superstars", "Overcooked! 2", "The Jackbox Party Pack"],
+    "covers": ["/covers/party/marioparty.jpg", "/covers/party/overcook2.jpg", "/covers/party/jackbox.jpg"],
+    "subgenres": ["Minigame Collection", "Co-op Chaos", "Trivia/Party"],
+    "popularity": { "1980s": 20, "1990s": 40, "2000s": 60, "2010s": 75, "2020s": 80 }
+    },
+    {
+    "id": "soulslike",
+    "name": "Soulslike",
+    "emoji": "🗡️",
+    "description": "Deliberate combat, punishing difficulty, tight stamina management, and interconnected worlds with high-stakes progression.",
+    "examples": ["Dark Souls III", "Elden Ring", "Sekiro: Shadows Die Twice"],
+    "covers": ["/covers/souls/ds3.jpg", "/covers/souls/bloodborne.jpg", "/covers/souls/jediSurvivor.jpg"],
+    "subgenres": ["Action RPG Soulslike", "2D Soulslike", "Metroidvania Soulslike"],
+    "popularity": { "1980s": 0, "1990s": 0, "2000s": 20, "2010s": 85, "2020s": 95 }
+    }
+    ,
+    {
+      "id": "action",
+      "name": "Action",
+      "emoji": "💥",
+      "description": "Fast-paced moment-to-moment gameplay focused on reflexes, combat, and real-time challenges.",
+      "examples": ["Devil May Cry 5", "Bayonetta 3", "Ninja Gaiden Black"],
+      "covers": ["/covers/action/dmc5.jpg", "/covers/action/bayo3.jpg", "/covers/action/ninjaGaiden.jpg"],
+      "subgenres": ["Character Action", "Hack & Slash", "Action-Adventure"],
+      "popularity": { "1980s": 60, "1990s": 80, "2000s": 85, "2010s": 90, "2020s": 90 }
+    },
+    {
+      "id": "adventure",
+      "name": "Adventure",
+      "emoji": "🗺️",
+      "description": "Exploration and narrative-driven experiences featuring puzzles, traversal, and discovery.",
+      "examples": ["The Legend of Zelda: Breath of the Wild", "Uncharted 4", "Grim Fandango"],
+      "covers": ["/covers/adventure/botw.jpg", "/covers/adventure/uncharted4.jpg", "/covers/adventure/grimFan.jpg"],
+      "subgenres": ["Graphic Adventure", "Point-and-Click", "Exploration Adventure"],
+      "popularity": { "1980s": 50, "1990s": 75, "2000s": 70, "2010s": 85, "2020s": 90 }
+    }
+    ,
+    {
+      "id": "visualnovel",
+      "name": "Visual Novel",
+      "emoji": "📖",
+      "description": "Story-first games with static or lightly animated scenes, branching choices, and multiple endings. Reading, relationship-building, and narrative decisions are core.",
+      "examples": ["Steins;Gate", "Clannad", "Doki Doki Literature Club!"],
+      "covers": ["/covers/visualNovel/steinsGate.jpg", "/covers/visualNovel/clannad.jpg", "/covers/visualNovel/fataMorgana.jpg"],
+      "subgenres": ["Kinetic Novel", "Otome", "Branching Narrative"],
+      "popularity": { "1980s": 5, "1990s": 20, "2000s": 45, "2010s": 80, "2020s": 85 }
+    }
+]
