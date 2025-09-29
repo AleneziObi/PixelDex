@@ -226,6 +226,22 @@ body {
   }
 }
 
+/* Subgenre explanations inside Compare panel */
+.sublist { margin: 6px 0 0; padding: 0; list-style: none; }
+.subitem { margin: 6px 0; }
+.subitem__name {
+  display: inline-block;
+  font-weight: 700;
+  margin-right: 6px;
+  color: #fff;
+}
+.subitem__desc {
+  color: rgba(220,220,235,0.85);
+  font-size: 12px;
+  line-height: 1.35;
+}
+
+
 @media (max-width: 880px) {
   .main { grid-template-columns: 1fr; }
   .sticky { position: static; }
