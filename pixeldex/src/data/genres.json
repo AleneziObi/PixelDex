@@ -5,9 +5,7 @@
     "emoji": "🛡️",
     "description": "Narrative-driven games where players level up characters and make choices.",
     "examples": ["Final Fantasy VII", "The Witcher 3", "Persona 5 Royal"],
-    "covers": ["https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co2kx2.jpg", 
-    "./covers/rpg/witcher3.jpg", 
-    "./covers/rpg/p5r.jpg"],
+    "covers": ["./covers/rpg/ff7.jpg", "./covers/rpg/witcher3.jpg", "./covers/rpg/p5r.jpg"],
     "popularity": { "1980s": 15, "1990s": 40, "2000s": 65, "2010s": 85, "2020s": 90 },
     "subgenres": ["JRPG", "WRPG", "Tactical RPG"]
   },
