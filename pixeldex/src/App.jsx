@@ -6,6 +6,7 @@ import CompareView from "./components/CompareView";
 import genres from "./data/genres.json";
 
 const REPO_URL = "https://github.com/AleneziObi/PixelDex";
+const DECADE_KEY = "2020s";
 
 export default function App() {
   const [query, setQuery] = useState("");
@@ -13,11 +14,11 @@ export default function App() {
   const [selectedGenre, setSelectedGenre] = useState(null);
   const [compare, setCompare] = useState([]);
   const exportRef = useRef(null);
-  const [showAbout, setShowAbout] = useState(false);
 
-  const popularityScore = (g) => {
-    Object.values(g.popularity || {}).reduce((sum, v) => sum + Number(v ||0), 0);
-  }
+  const popularity2020 = (g) => Number(g?.popularity?.[DECADE_KEY] ?? 0);
+
+  const popularityTotal = (g) =>
+   Object.values(g.popularity || {}).reduce((sum, v) => sum + Number(v || 0), 0);
 
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
@@ -37,10 +38,10 @@ export default function App() {
         arr.sort((a, b) => b.name.localeCompare(a.name));
         break;
       case "popAsc":
-        arr.sort((a, b) => (popularityScore(a) || 0) - (popularityScore(b) || 0));
+        arr.sort((a, b) => popularity2020(b) - popularity2020(a));
         break;
       case "popDesc":
-        arr.sort((a, b) => (popularityScore(b) || 0) - (popularityScore(a) || 0));
+        arr.sort((a, b) => popularity2020(a) - popularity2020(b));
         break;
       default:
         break;
@@ -69,14 +70,13 @@ export default function App() {
           <div className="tag">Explore game genres • Frontend demo</div>
         </div>
         <div className="header-actions">
-          <button className="btn btn--ghost" onClick={() => setShowAbout(true)}>About</button>
 
           <a 
           className="btn btn--ghost"
           href ={REPO_URL}
           target="_blank"
           rel="noreferrer"
-          arua-label="GitHub repository"
+          aria-label="GitHub repository"
           
           >GitHub</a>
         </div>
@@ -136,4 +136,3 @@ export default function App() {
     </div>
   );
 }
-
