@@ -126,7 +126,7 @@ export default function App() {
         </div>
       </main>
 
-      <footer className="footer">Made by Alenezio — PixelDex</footer>
+      <footer className="footer">Made by @AleneziObi — PixelDex</footer>
 
       <GenreDetail
         genre={selectedGenre}
