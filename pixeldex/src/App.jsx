@@ -5,12 +5,15 @@ import GenreDetail from "./components/GenreDetail";
 import CompareView from "./components/CompareView";
 import genres from "./data/genres.json";
 
+const REPO_URL = "https://github.com/AleneziObi/PixelDex";
+
 export default function App() {
   const [query, setQuery] = useState("");
   const [sort, setSort] = useState("az"); // az | za | popAsc | popDesc
   const [selectedGenre, setSelectedGenre] = useState(null);
   const [compare, setCompare] = useState([]);
   const exportRef = useRef(null);
+  const [showAbout, setShowAbout] = useState(false);
 
   const popularityScore = (g) => {
     Object.values(g.popularity || {}).reduce((sum, v) => sum + Number(v ||0), 0);
@@ -66,8 +69,16 @@ export default function App() {
           <div className="tag">Explore game genres • Frontend demo</div>
         </div>
         <div className="header-actions">
-          <button className="btn btn--ghost">About</button>
-          <button className="btn btn--ghost">GitHub</button>
+          <button className="btn btn--ghost" onClick={() => setShowAbout(true)}>About</button>
+
+          <a 
+          className="btn btn--ghost"
+          href ={REPO_URL}
+          target="_blank"
+          rel="noreferrer"
+          arua-label="GitHub repository"
+          
+          >GitHub</a>
         </div>
       </header>
 
